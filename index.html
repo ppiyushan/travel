@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore Sri Lanka | Tourist Attractions, Trip Planner &amp; Travel Guide</title>
+  <meta name="description" content="Plan your Sri Lanka trip: explore Sigiriya, Ella, Galle Fort, Mirissa, Yala and more, browse photos, and build a day-by-day itinerary.">
+  <meta name="keywords" content="Sri Lanka travel, Sri Lanka tourism, Sigiriya, Ella, Galle Fort, Mirissa, Yala, Sri Lanka itinerary">
+  <meta name="theme-color" content="#062f40">
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Explore Sri Lanka">
+  <meta property="og:description" content="Ancient wonders, golden beaches and breathtaking nature. Browse destinations and build your own Sri Lanka itinerary.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Inline favicon so no extra file is needed -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23062f40'/%3E%3Ccircle cx='32' cy='26' r='11' fill='%23f2b632'/%3E%3Cpath d='M8 42q8-6 16 0t16 0 16 0v14H8z' fill='%230e7c9b'/%3E%3C/svg%3E">
+
+  <!-- Fonts: Fraunces (headings) and Hanken Grotesk (body). The site falls back to system fonts offline. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Marks the page as JS-enabled so scroll-reveal styles only apply when scripts run -->
+  <script>document.documentElement.className = 'js';</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Explore Sri Lanka",
+    "description": "A travel guide to Sri Lanka's destinations with a search, trip planner and photo gallery."
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ HEADER / NAVIGATION ============ -->
+  <header class="site-header" id="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Explore Sri Lanka, home">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="19" r="9" fill="#f2b632"/>
+          <path d="M4 33q5-5 10 0t10 0 10 0 10 0v11H4z" fill="#5cc2c6"/>
+          <path d="M4 38q5-5 10 0t10 0 10 0 10 0v6H4z" fill="#0e7c9b"/>
+        </svg>
+        <span class="brand-text">Explore Sri Lanka</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Menu</span>
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#planner">Trip Planner</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <noscript>
+      <p class="noscript">This site needs JavaScript for the destination list, trip planner and gallery. Please enable it in your browser settings.</p>
+    </noscript>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-inner container">
+        <h1 id="hero-title">Discover the Beauty of Sri Lanka</h1>
+        <p class="hero-sub">Explore Paradise — Ancient Wonders, Golden Beaches, and Breathtaking Nature.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#destinations">Explore Destinations</a>
+          <a class="btn btn-ghost" href="#planner">Plan Your Trip</a>
+        </div>
+        <!-- Filled by JavaScript: places that are in season this month -->
+        <div class="season" id="season"></div>
+      </div>
+      <svg class="hero-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 50 C 180 90 360 90 540 55 C 720 20 900 20 1080 55 C 1260 90 1380 80 1440 60 V90 H0Z" fill="#ffffff"/>
+      </svg>
+    </section>
+
+    <!-- ============ FEATURED DESTINATIONS ============ -->
+    <section class="section" id="featured" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="featured-title">Featured destinations</h2>
+          <p>Four places that show how much variety fits on one island: a rock fortress, a railway through tea country, a colonial fort and a whale-watching bay.</p>
+        </div>
+        <div class="featured-grid reveal" id="featured-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ POPULAR ATTRACTIONS ============ -->
+    <section class="section section-tint" id="popular" aria-labelledby="popular-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="popular-title">Popular tourist attractions</h2>
+          <p>The experiences visitors talk about most. Each one opens a full guide.</p>
+        </div>
+        <ul class="experience-list reveal">
+          <li class="experience">
+            <h3>Ride the Kandy to Ella train</h3>
+            <p>Window seats on this hill-country line pass tea estates, waterfalls and cloud forest. Book reserved seats ahead where you can.</p>
+            <button class="link-btn" type="button" data-open="ella">Read about Ella and the Nine Arch Bridge</button>
+          </li>
+          <li class="experience">
+            <h3>Look for leopards in Yala</h3>
+            <p>Yala is known for one of the highest leopard densities in the world, along with elephants, sloth bears and crocodiles.</p>
+            <button class="link-btn" type="button" data-open="yala">Read about Yala National Park</button>
+          </li>
+          <li class="experience">
+            <h3>Climb Sigiriya at first light</h3>
+            <p>Start early to climb the ancient stairways past frescoes to the summit gardens before the heat builds.</p>
+            <button class="link-btn" type="button" data-open="sigiriya">Read about Sigiriya Rock Fortress</button>
+          </li>
+          <li class="experience">
+            <h3>Go whale watching off Mirissa</h3>
+            <p>Blue whales and other species are seen from the south coast between roughly November and April.</p>
+            <button class="link-btn" type="button" data-open="mirissa">Read about Mirissa Beach</button>
+          </li>
+          <li class="experience">
+            <h3>Walk the ramparts of Galle Fort</h3>
+            <p>Circle the old Dutch walls in the late afternoon and finish at the lighthouse as the sun goes down.</p>
+            <button class="link-btn" type="button" data-open="galle">Read about Galle Fort</button>
+          </li>
+          <li class="experience">
+            <h3>Watch sunrise from Adam’s Peak</h3>
+            <p>Pilgrims and travellers climb thousands of steps overnight to reach the summit for dawn.</p>
+            <button class="link-btn" type="button" data-open="adams-peak">Read about Adam’s Peak</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ WHY VISIT ============ -->
+    <section class="section section-dark" id="why" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="why-title">Why visit Sri Lanka</h2>
+          <p>A compact island with unusually big contrasts.</p>
+        </div>
+        <div class="why-grid reveal">
+          <article class="why-item">
+            <span class="why-icon" aria-hidden="true">🏛️</span>
+            <h3>Eight UNESCO World Heritage Sites</h3>
+            <p>Ancient capitals, a rock fortress, a sacred hill city, a colonial fort, rainforest and highlands, all on one small island.</p>
+          </article>
+          <article class="why-item">
+            <span class="why-icon" aria-hidden="true">🌊</span>
+            <h3>Two coasts, two seasons</h3>
+            <p>When the south and west coasts get monsoon rain, the east coast is usually dry, so there is a good beach somewhere for much of the year.</p>
+          </article>
+          <article class="why-item">
+            <span class="why-icon" aria-hidden="true">🐘</span>
+            <h3>Wildlife within reach</h3>
+            <p>Elephants, leopards, sloth bears and blue whales can all be seen within a day or two of travel from each other.</p>
+          </article>
+          <article class="why-item">
+            <span class="why-icon" aria-hidden="true">🍃</span>
+            <h3>Hills and beaches, a day apart</h3>
+            <p>Cool tea country and warm palm-fringed shores are a single scenic journey apart, by road or by rail.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRAVEL INSPIRATION ============ -->
+    <section class="section" id="inspiration" aria-labelledby="inspiration-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="inspiration-title">Travel inspiration</h2>
+          <p>Not sure where to start? Pick a journey and the trip planner builds it for you.</p>
+        </div>
+        <div class="inspire-grid reveal">
+          <article class="inspire inspire-culture">
+            <h3>Kingdoms and cave temples</h3>
+            <p>Five days through the ancient cities, Sigiriya and Dambulla.</p>
+            <button class="btn btn-gold" type="button" data-preset="5|culture">Plan this journey</button>
+          </article>
+          <article class="inspire inspire-hills">
+            <h3>Tea, trains and trails</h3>
+            <p>Five days of cool hills, waterfalls and viewpoints.</p>
+            <button class="btn btn-gold" type="button" data-preset="5|nature,adventure">Plan this journey</button>
+          </article>
+          <article class="inspire inspire-safari">
+            <h3>Safari and sea</h3>
+            <p>Seven days of elephants, leopards and whales.</p>
+            <button class="btn btn-gold" type="button" data-preset="7|wildlife,beaches">Plan this journey</button>
+          </article>
+          <article class="inspire inspire-beach">
+            <h3>Slow beach days</h3>
+            <p>Three days on the sand, in the surf and on the reef.</p>
+            <button class="btn btn-gold" type="button" data-preset="3|beaches">Plan this journey</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DESTINATIONS (search / filter / sort) ============ -->
+    <section class="section section-tint" id="destinations" aria-labelledby="destinations-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="destinations-title">All tourist destinations</h2>
+          <p>Fifteen places worth the journey. Search by name, filter by type, or sort the list.</p>
+        </div>
+
+        <div class="toolbar">
+          <div class="field search-field">
+            <label for="search-input">Search destinations</label>
+            <input type="search" id="search-input" placeholder="Try “Ella” or “beach”" autocomplete="off">
+          </div>
+          <div class="field sort-field">
+            <label for="sort-select">Sort by</label>
+            <select id="sort-select">
+              <option value="featured">Suggested order</option>
+              <option value="az">Name A to Z</option>
+              <option value="za">Name Z to A</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filters" id="category-filters" role="group" aria-label="Filter destinations by category"></div>
+
+        <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+
+        <div class="card-grid" id="destination-grid"></div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <h3>No destinations match your search</h3>
+          <p>Check the spelling, try a broader word like “beach” or “temple”, or clear the filters.</p>
+          <button class="btn btn-ocean" type="button" id="reset-filters">Clear search and filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRIP PLANNER ============ -->
+    <section class="section" id="planner" aria-labelledby="planner-title">
+      <div class="container planner">
+        <div class="section-head reveal">
+          <h2 id="planner-title">Plan your trip</h2>
+          <p>Choose how long you have and what you enjoy. The planner groups nearby places so each day stays realistic.</p>
+        </div>
+
+        <form class="planner-form reveal" id="planner-form" novalidate>
+          <fieldset class="choice-group">
+            <legend>How many days do you have?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="duration" value="3"><span>3 days</span></label>
+              <label class="choice"><input type="radio" name="duration" value="5" checked><span>5 days</span></label>
+              <label class="choice"><input type="radio" name="duration" value="7"><span>7 days</span></label>
+              <label class="choice"><input type="radio" name="duration" value="10"><span>10 days</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-group">
+            <legend>What are you into? Pick one or more.</legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="interests" value="beaches"><span>Beaches</span></label>
+              <label class="choice"><input type="checkbox" name="interests" value="nature"><span>Nature</span></label>
+              <label class="choice"><input type="checkbox" name="interests" value="wildlife"><span>Wildlife</span></label>
+              <label class="choice"><input type="checkbox" name="interests" value="culture"><span>Culture</span></label>
+              <label class="choice"><input type="checkbox" name="interests" value="adventure"><span>Adventure</span></label>
+            </div>
+          </fieldset>
+
+          <p class="form-error" id="planner-error" role="alert" hidden></p>
+
+          <div class="form-actions">
+            <button class="btn btn-gold" type="submit">Build my itinerary</button>
+            <button class="btn btn-outline" type="reset" id="planner-reset">Start over</button>
+          </div>
+        </form>
+
+        <div class="itinerary" id="itinerary" tabindex="-1" aria-live="polite">
+          <p class="itinerary-empty">Your itinerary will appear here.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PHOTO GALLERY ============ -->
+    <section class="section section-tint" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="gallery-title">Photo gallery</h2>
+          <p>Beaches, mountains, wildlife, temples and ancient cities. Select a photo to view it larger.</p>
+        </div>
+        <div class="filters" id="gallery-filters" role="group" aria-label="Filter photos by category"></div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT SRI LANKA ============ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="about-title">About Sri Lanka</h2>
+          <p>An island in the Indian Ocean with more than two thousand years of recorded history, home to about 22 million people.</p>
+        </div>
+        <div class="about-grid reveal">
+          <article class="about-item">
+            <h3>Rich cultural heritage</h3>
+            <p>Sinhalese, Tamil, Muslim, Burgher and other communities share the island. Buddhism, Hinduism, Islam and Christianity are all practised, and temples, kovils, mosques and churches often stand close together.</p>
+          </article>
+          <article class="about-item">
+            <h3>Ancient kingdoms</h3>
+            <p>Anuradhapura became a royal capital in the 4th century BCE, followed by Polonnaruwa, Sigiriya and others. The Kingdom of Kandy was the last to fall, to the British in 1815.</p>
+          </article>
+          <article class="about-item">
+            <h3>Beautiful beaches</h3>
+            <p>Palm-lined bays run along the south and west, while the east coast offers surf and quieter sands. Mirissa, Hikkaduwa and Arugam Bay each have a different mood.</p>
+          </article>
+          <article class="about-item">
+            <h3>Wildlife and national parks</h3>
+            <p>More than twenty national parks protect elephants, leopards, sloth bears and hundreds of bird species. The seas off the south coast are among the best places to see blue whales.</p>
+          </article>
+          <article class="about-item">
+            <h3>Hill country and tea plantations</h3>
+            <p>Commercial tea planting began in the 1860s, and Ceylon tea is still grown on the cool slopes around Nuwara Eliya, Hatton and Ella. Trains wind through the estates.</p>
+          </article>
+          <article class="about-item">
+            <h3>Traditional food and festivals</h3>
+            <p>Expect rice and curry, hoppers, kottu roti, pol sambol and sweet treats. Festivals include Sinhala and Tamil New Year in April, Vesak in May, Thai Pongal in January and the Kandy Esala Perahera in July or August.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section-tint" id="contact" aria-labelledby="contact-title">
+      <div class="container contact">
+        <div class="contact-intro reveal">
+          <h2 id="contact-title">Contact us</h2>
+          <p>Questions about a destination or your itinerary? Send us a note.</p>
+          <p class="notice"><strong>Please note:</strong> this website runs entirely in your browser, with no server behind it. The form checks your entries and shows a confirmation, but it does not deliver the message anywhere. To receive real messages, connect the form to a backend or an external form service such as Formspree, Netlify Forms or EmailJS.</p>
+          <p>For official visitor information, see <a href="https://www.srilanka.travel" target="_blank" rel="noopener noreferrer">Sri Lanka Tourism (srilanka.travel)</a>.</p>
+        </div>
+
+        <div class="contact-card reveal">
+          <form id="contact-form" novalidate>
+            <div class="field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+              <p class="field-error" id="name-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+              <p class="field-error" id="email-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required aria-describedby="subject-error">
+              <p class="field-error" id="subject-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+              <p class="field-error" id="message-error" hidden></p>
+            </div>
+            <button class="btn btn-gold" type="submit">Send message</button>
+          </form>
+
+          <div class="form-success" id="form-success" role="status" tabindex="-1" hidden>
+            <h3>Thanks, your message is valid</h3>
+            <p id="success-text"></p>
+            <button class="btn btn-outline" type="button" id="send-another">Write another message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#home" aria-label="Explore Sri Lanka, back to top">
+          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="19" r="9" fill="#f2b632"/>
+            <path d="M4 33q5-5 10 0t10 0 10 0 10 0v11H4z" fill="#5cc2c6"/>
+            <path d="M4 38q5-5 10 0t10 0 10 0 10 0v6H4z" fill="#0e7c9b"/>
+          </svg>
+          <span class="brand-text">Explore Sri Lanka</span>
+        </a>
+        <p>Ancient wonders, golden beaches and breathtaking nature, gathered in one place to help you plan.</p>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <h2 class="footer-title">Explore</h2>
+        <ul class="footer-links">
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#planner">Trip Planner</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About Sri Lanka</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="footer-title">Follow along</h2>
+        <!-- These point to each platform's home page. Replace with your own profile URLs. -->
+        <ul class="social-list">
+          <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/></svg></a></li>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a></li>
+          <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube (opens in a new tab)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a></li>
+          <li><a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X (opens in a new tab)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.5l10.5 16h-3.5z"/><path d="M18.5 4 13 10.5M5.5 20l5.5-6.5"/></svg></a></li>
+        </ul>
+        <p class="footer-small">Official visitor information: <a href="https://www.srilanka.travel" target="_blank" rel="noopener noreferrer">srilanka.travel</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; <span id="year">2026</span> Explore Sri Lanka. Travel details change, so confirm opening times and entry rules before you go.</p>
+    </div>
+  </footer>
+
+  <!-- ============ DESTINATION DETAILS MODAL ============ -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel" id="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+      <button class="icon-btn modal-close" type="button" aria-label="Close destination details" data-close-modal>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- ============ GALLERY LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lb-btn lb-close" type="button" id="lb-close" aria-label="Close photo viewer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button class="lb-btn lb-prev" type="button" id="lb-prev" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <figure class="lb-figure">
+      <img id="lb-img" src="" alt="">
+      <figcaption id="lb-caption"></figcaption>
+    </figure>
+    <button class="lb-btn lb-next" type="button" id="lb-next" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
